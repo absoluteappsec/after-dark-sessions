@@ -40,6 +40,9 @@ Nothing so far.
 * Datastore - Postgresql, MySQL, SQLite
  Diesel ORM + Query Builder
 
+## General information
+
+* The application will go ahead and generate JWTs and [then store them inside of cookies](https://github.com/dani-garcia/vaultwarden/blob/42136a70973f60086749c62439c6a965d4589c02/src/api/admin.rs#L186-L194)
 
 ## Brainstorming / Risks
 
@@ -84,6 +87,7 @@ Nothing so far.
 - [ ] Code is ruby/rails, make sure and run brakeman before closing out
 
 ## Mapping / Routes
+* The pattern is - as an example - `/admin` goes to admin.rs - admin.rs has a list of functions in the routes array, and the functions define the paths inside themselves
 * Rocket Routes use the following patterns `#[get("/foo")]`
 * `/` - web_routes
   * `/` - web_index
