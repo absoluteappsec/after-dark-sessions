@@ -136,6 +136,7 @@ Nothing so far.
   * Just gets an IP but only if its configured to retrieve IPs from headers. Important from logging perspective.
 - [ ] `Headers`
   - Coarse grained - basically validates JWT is valid through timestamp/securitystamp
+  - This appears to be doing route matching based on a security stamp exception - we're guessing the exception occurs because someone has been temporarily granted access to an org resource - we say this because its used by orgheaders
 
 
 ## Mapping / Important Files
