@@ -113,7 +113,8 @@ Nothing so far.
   * `/emergency-access/granted`
   * `/emergency-access/<emer_id>`
   * `/emergency-access/invite`
-* `/admin` - admin_routes
+- [ ] `/admin` - admin_routes
+  * [ADMIN_TOKEN](https://github.com/dani-garcia/vaultwarden/blob/7c89bc619a55debf3fa7b4ff7f5c53d0a1125a85/.env.template#L237-L238) is placed in the .env file and therefore is statically set - even if changed this could be for sure problematic
 * `/identity` - identity_routes
 * `/icons` - icons_routes
 * `/notifications` - notification_routes
