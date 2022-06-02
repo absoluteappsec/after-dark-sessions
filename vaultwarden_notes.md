@@ -68,8 +68,8 @@ Nothing so far.
 - [ ] Verify that OrgHeaders does not have a weighting/ranking/confusion issues because it takes the UUID from both the query string and parameters.
 
 ### Authentication
-- [ ] Login page give error messages, check for enumeration
-- [ ] Signup page allows for freeform passwords, does it implement proper password complexity?
+- [ ] Timing attacks
+ * We've got some issues here throughout the application where we're not performing constant time comparisons OR in the case of identity.rs, we do perform a lookup of the user and then separately also do a [password check separately](https://github.com/dani-garcia/vaultwarden/blob/fb0c23b71fe8ff95bc421a8e6dbbc6d4a46a38d5/src/api/identity.rs#L102-L113)
 
 ### Authorization
 - [ ] Uses @login_required decorator, is it applied on all endpoints appropriately?
