@@ -1,6 +1,6 @@
 # Secure Code Review - VaultWarden
 
-[Code Repository](https://github.com/dani-garcia/vaultwarden) 
+[Code Repository](https://github.com/dani-garcia/vaultwarden)
 We assessed commit `#06f8e69c7026d4aacc15bbbe0a87377e131336db`
 
 # Findings
@@ -37,7 +37,7 @@ Nothing so far.
 * 3rd party components, Examples:
   Encoding libraries, several
   Token libraries: jsonwebtoken, yubico, totp-lite, webauthn-rs, u2f
-* Datastore - Postgresql, MySQL, SQLite 
+* Datastore - Postgresql, MySQL, SQLite
  Diesel ORM + Query Builder
 
 
@@ -52,14 +52,12 @@ Nothing so far.
 * Re-invite users in bulk, abuse patterns here?
 * Any ability to forge the contents of a JWT - Auth.rs "stuff" is based on the validity of the sessions.
 * Look at how UUIDs are generated
+* securitystamp is
 
 ## Checklist of things to review
 
 ### Risks
-- [ ] Look for instances of `| safe` in the template/views
-- [ ] Look for OS commands
-- [ ] Look at the ORM for instances of `createNativeQuery()`
-- [ ] Developer expected `x` but I think we should try to see if `y` is possible
+- [ ] Verify that OrgHeaders does not have a weighting/ranking/confusion issues because it takes the UUID from both the query string and parameters.
 
 ### Authentication
 - [ ] Login page give error messages, check for enumeration
@@ -105,13 +103,11 @@ Nothing so far.
   * `/emergency-access/trusted`
   * `/emergency-access/granted`
   * `/emergency-access/<emer_id>`
-  * `/emergency-access/invite` 
+  * `/emergency-access/invite`
 * `/admin` - admin_routes
 * `/identity` - identity_routes
 * `/icons` - icons_routes
 * `/notifications` - notification_routes
-- [ ] `GET /lulz LulzController.java`
-- [ ] `POST /admin/rofl AdminRoflController.java`
 
 ## Mapping / Authorization Decorators
 
@@ -124,7 +120,7 @@ Nothing so far.
   * OrgHeaders check
   * Just have to be a manager or above (admin/owner)
 - [ ] `ManagerHeaders`
- * Invokes org headers
+  * Invokes org headers
   * Checks that you have a manager user type or above (admin, owner)
   * If collection ID passed, then it'll do a verification that you have "full_access" but will not verify your user belongs to that collection
   * Collection enumeration
@@ -136,6 +132,7 @@ Nothing so far.
   * Just gets an IP but only if its configured to retrieve IPs from headers. Important from logging perspective.
 - [ ] `Headers`
   - Coarse grained - basically validates JWT is valid through timestamp/securitystamp
+  -
 
 
 ## Mapping / Important Files
