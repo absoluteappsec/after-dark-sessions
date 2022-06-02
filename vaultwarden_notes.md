@@ -56,6 +56,11 @@ Nothing so far.
 
 ## Checklist of things to review
 
+- [ ] From the [Rust Handlebar Documentation](https://docs.rs/handlebars/latest/handlebars/), `no_escape` is the primary way to go about not escapign templates
+  * I noticed that in the handlebars spec usually {{{ }}} means raw HTML
+  * [This issue is interesting](https://github.com/sunng87/handlebars-rust/issues/393) because it talks about escaping in various contexts 
+
+
 ### Risks
 - [ ] Verify that OrgHeaders does not have a weighting/ranking/confusion issues because it takes the UUID from both the query string and parameters.
 
