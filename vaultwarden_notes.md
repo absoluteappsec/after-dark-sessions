@@ -115,6 +115,7 @@ Nothing so far.
   * `/emergency-access/invite`
 - [ ] `/admin` - admin_routes
   * [ADMIN_TOKEN](https://github.com/dani-garcia/vaultwarden/blob/7c89bc619a55debf3fa7b4ff7f5c53d0a1125a85/.env.template#L237-L238) is placed in the .env file and therefore is statically set - even if changed this could be for sure problematic
+  * [response::{content::RawHtml as Html, Flash, Redirect},](https://github.com/dani-garcia/vaultwarden/blob/42136a70973f60086749c62439c6a965d4589c02/src/api/admin.rs#L11-L12) - does this introduce this XSS?
 * `/identity` - identity_routes
 * `/icons` - icons_routes
 * `/notifications` - notification_routes
